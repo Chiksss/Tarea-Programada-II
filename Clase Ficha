@@ -1,0 +1,154 @@
+package couriertec;
+
+import java.io.Serializable;
+   /**
+ * 
+ * Ficha, clase de tipo generica, que crea un objeto de tipo ficha que sera utilizado para implementar los metodos: Quiosco de Autoservicio, Entregas, Seguridad y Administracion.
+ * @param <T>
+ */
+
+public class Ficha<T> implements Serializable {
+
+    //Colas necesarias:
+    LCola Perecedero = new LCola();
+    LCola NoPerecedero = new LCola();
+    LCola Discapacidad = new LCola();
+    LCola AdultoMayor = new LCola();
+    LCola Embarazada = new LCola();
+    LCola Regular = new LCola();
+    
+   /**
+ * Atributos de la clase ficha: tipo, entrega, numero, nombre y ficha.
+ */ 	
+    private T tipo;
+    private T entrega;
+    private T numero;
+    private T nombre;
+    private T ficha;
+    
+    /**
+     * Método constructor de la clase ficha que no recibe parametros.
+     */
+    
+    public Ficha() {
+		this.tipo=null;
+		this.entrega=null;
+		this.ficha=null;
+    }
+    
+    /**
+     * Ficha, método constructor de la clase ficha.
+     * @param tipo, de tipo generico, tipo de persona: Discapacitado, Adulto Mayor, Embarazada o Cliente Regular.
+     * @param entrega, de tipo generico, entrega de la ficha: perecedero o no perecedero.
+     * @param ficha, de tipo generico, tiquete generado y asigando a una persona en especifico. 
+      
+     */
+    
+    public Ficha(T tipo, T entrega, T ficha) {
+		this.tipo = tipo;
+		this.entrega = entrega;
+		this.ficha = ficha;
+	}
+    
+    /**
+     * getTipo, metodo que devuelve el tipo de persona.
+     * @return tipo de persona(Discapacitado, Adulto Mayor, Embarazada o Cliente Regular).
+     */
+    
+	public T getTipo() {
+		return tipo;
+	}
+	
+	/**
+	 * setTipo, cambia el valor de tipo de persona por uno ingresado.
+	 * @param tipo, de tipo generico. Tipo de persona por el que se desea cambiar.
+	 */
+
+	public void setTipo(T tipo) {
+		this.tipo = tipo;
+	}
+
+	/**
+     * getClase, metodo que devuelve la entrega de Ficha.
+     * @return entrega de Ficha(Perecedero o no perecedero).
+     */
+	
+	public T getEntrega() {
+		return entrega;
+	}
+
+	/**
+	 * setClase, cambia el valor de la entrega de ficha por uno ingresado.
+	 * @param entrega, de tipo generico. Entrega de ficha por el que se desea cambiar.
+	 */
+	
+	public void setEntrega(T entrega) {
+		this.entrega = entrega;
+	}
+
+	/**
+     * getTiquete, metodo que devuelve el ficha generada y asignada a una persona.
+     * @return ficha generada y asignada a una persona.
+     */
+	
+	public T getFicha() {
+		return ficha;
+	}
+	
+	/**
+	 * setFicha, cambia el valor de la ficha por uno ingresado.
+	 * @param ficha, de tipo generico. Tiquete por el que se desea cambiar.
+	 */
+	
+	public void setFicha(T ficha) {
+		this.ficha = ficha;
+	}
+	
+	/**
+     * getNumero, metodo que devuelve el numero de telefono de la persona.
+     * @return numero de telefono de la persona.
+     */
+	
+	public T getNumero() {
+		return numero;
+	}
+	
+	/**
+	 * setNumero, cambia el valor de numero por uno ingresado.
+	 * @param numero, de tipo generico. Numero por el que se desea cambiar.
+	 */
+	
+	public void setNumero(T numero) {
+		this.numero = numero;
+	}
+	
+	/**
+     * getNombre, metodo que devuelve el nombre de la persona.
+     * @return nombre de la persona.
+     */
+	
+	public T getNombre() {
+		return nombre;
+	}
+	
+	/**
+	 * setNombre, cambia el valor de nombre por uno ingresado.
+	 * @param nombre, de tipo generico. Nombre por el que se desea cambiar.
+	 */
+	
+	public void setNombre(T nombre) {
+		this.nombre = nombre;
+	}
+      
+   
+	/**
+     * toString, metodo que devuelve el contenido de los atributos del objeto Ficha.
+     * @return null, hace un print de los atributos.
+     */
+	
+	public String toString() {
+		System.out.println("La entrega: "+ this.entrega+", tipo: "+this.tipo+", numero: "+this.numero+", ficha: "+this.ficha+", Nombre: "+this.nombre);
+		return null;
+	}
+	
+}
